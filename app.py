@@ -1,34 +1,31 @@
-from strands import Agent
-from tools.civic import create_civic_complaint
+from agents.jan_sahayak import create_agent
 
-SYSTEM_PROMPT = """
-You are Jan-SahayakAI, an AI-powered Good Neighbour Agent.
+# Initialize the agent
+agent = create_agent()
 
-Help residents identify and resolve civic problems.
-
-When the user wants to prepare a civic complaint,
-collect the issue, location, and description.
-
-Use the civic complaint tool when you have the
-required information.
-
-Never invent information.
-"""
-
-agent = Agent(
-    system_prompt=SYSTEM_PROMPT,
-    model="anthropic.claude-sonnet-4-6",
-    tools=[create_civic_complaint]
-)
-
+print("========================================")
+print("       JAN-SAHAYAKAI")
+print("   Your Good Neighbour AI Agent")
+print("========================================")
+print("Type 'exit' to stop.\n")
 print("Jan-SahayakAI is ready!")
 
 while True:
-    user_input = input("\nYou: ")
-
-    if user_input.lower() == "exit":
+    try:
+        user_input = input("\nYou: ")
+        
+        if user_input.lower() in ["exit", "quit"]:
+            print("Goodbye!")
+            break
+            
+        if not user_input.strip():
+            continue
+            
+        response = agent(user_input)
+        print(f"\nJan-SahayakAI: {response}")
+        
+    except KeyboardInterrupt:
+        print("\nGoodbye!")
         break
-
-    response = agent(user_input)
-
-    print("\nJan-SahayakAI:", response)
+    except Exception as e:
+        print(f"\nError: {e}")
