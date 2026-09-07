@@ -49,7 +49,7 @@ def create_agent() -> Agent:
     os.environ.setdefault("AWS_DEFAULT_REGION", "ap-south-1")
     return Agent(
         system_prompt=SYSTEM_PROMPT,
-        model="bedrock/amazon.nova-lite-v1:0",
+        model="apac.amazon.nova-lite-v1:0",
         tools=[
             create_civic_complaint,
             identify_department,
