@@ -1,0 +1,74 @@
+[
+  {
+    "scheme_id": "SCH001",
+    "name": "PM-USP Central Sector Scheme of Scholarship for College and University Students",
+    "category": "education",
+    "level": "central",
+    "state": "All",
+    "description": "A merit-based scholarship scheme listed on the National Scholarship Portal for eligible college and university students.",
+    "eligibility": {
+      "age": "Not stated in this prototype record; verify the current scheme guidelines.",
+      "income": "Family-income conditions may apply; verify the current scheme guidelines.",
+      "education": "For eligible college and university students; exact academic and merit conditions must be verified on the official portal.",
+      "other": "The National Scholarship Portal states that eligibility criteria are scheme-specific. No official eligibility decision is made here."
+    },
+    "benefits": [
+      "Scholarship support under the PM-USP Central Sector Scheme of Scholarship for College and University Students.",
+      "Current award amounts and conditions must be verified in the official scheme guidelines."
+    ],
+    "documents": [
+      "Documents requested by the National Scholarship Portal for the selected scheme.",
+      "Aadhaar or other identity and verification details may be requested; verify the current checklist before applying."
+    ],
+    "authority": "Department of Higher Education, Ministry of Education, Government of India",
+    "source": "https://scholarships.gov.in/"
+  },
+  {
+    "scheme_id": "SCH002",
+    "name": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+    "category": "agriculture",
+    "level": "central",
+    "state": "All",
+    "description": "A Central Sector scheme providing income support to eligible landholding farmer families, subject to the scheme guidelines and exclusion categories.",
+    "eligibility": {
+      "age": "No age rule is asserted in this prototype record; verify the current guidelines.",
+      "income": "Certain exclusion categories apply, including specified higher economic status categories; verify the current official exclusions.",
+      "education": "Not applicable.",
+      "other": "State and Union Territory administrations identify eligible farmer families. Landholding, family definition, registration, and eKYC requirements must be verified."
+    },
+    "benefits": [
+      "Income support of Rs. 6,000 per year in three equal instalments, as described on the official portal.",
+      "Funds are transferred directly to beneficiary bank accounts subject to verification."
+    ],
+    "documents": [
+      "Details needed for farmer registration and verification as specified by the official portal.",
+      "Bank account, identity, land, and eKYC requirements must be confirmed before applying."
+    ],
+    "authority": "Department of Agriculture and Farmers Welfare, Ministry of Agriculture and Farmers Welfare, Government of India",
+    "source": "https://pmkisan.gov.in/"
+  },
+  {
+    "scheme_id": "SCH003",
+    "name": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)",
+    "category": "housing",
+    "level": "central",
+    "state": "All",
+    "description": "The Government of India's rural housing programme. This prototype record points to the official PMAY-G portal without asserting an individual applicant's eligibility.",
+    "eligibility": {
+      "age": "Not stated in this prototype record; verify the current programme guidelines.",
+      "income": "Do not infer income eligibility here; verify the current programme guidelines and local records.",
+      "education": "Not applicable.",
+      "other": "Rural residence and household selection requirements are programme-specific and must be verified through the official portal and local authorities."
+    },
+    "benefits": [
+      "Rural housing assistance as provided under the current PMAY-G guidelines.",
+      "Assistance amounts and construction-related conditions must be verified from the official source."
+    ],
+    "documents": [
+      "Documents and records requested by the PMAY-G process.",
+      "Confirm the current document checklist with the official portal or local implementing authority."
+    ],
+    "authority": "Ministry of Rural Development, Government of India",
+    "source": "https://pmayg.nic.in/"
+  }
+]

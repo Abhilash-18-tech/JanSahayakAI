@@ -8,7 +8,7 @@ Jan-SahayakAI is an AI-powered Good Neighbour Agent designed to help residents w
 - **Department Routing:** Intelligently routes issues to the correct mock government department.
 - **Complaint Tracking:** Allows users to track the status of their complaints.
 - **Follow-ups:** Provides guidance on the next action to take for an existing complaint.
-- **Government Scheme Discovery:** Helps users discover relevant government welfare schemes based on their profile.
+- **Government Scheme Discovery:** Searches a small JSON-backed set of schemes from official government sources.
 - **Preliminary Eligibility Checking:** Performs initial eligibility checks for schemes (Prototype).
 
 ## Prerequisites
@@ -38,4 +38,10 @@ Jan-SahayakAI is an AI-powered Good Neighbour Agent designed to help residents w
 
 ## Architecture
 This project uses [Strands Agents](https://github.com/strands-agents/harness-sdk) to connect Claude (via Amazon Bedrock) with Python-based tools. 
-For more details, see `documentation.md`.
+For scheme discovery in Part 9, the flow is:
+
+```text
+Agent -> search_schemes() -> data/schemes/schemes.json
+```
+
+This is an intermediate knowledge-source architecture. Part 10 will replace or augment it with official-document RAG; RAG is not included yet. For more details, see `documentation.md`.

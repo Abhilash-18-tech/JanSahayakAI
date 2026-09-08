@@ -23,8 +23,8 @@ Jan-SahayakAI uses the **Strands Agents** framework to create an AI assistant th
        │                   │                    │
        │                   ▼                    │
        │          ┌─────────────────┐            │
-       │          │ Scheme Knowledge│            │
-       │          │     Layer       │            │
+                           │          │ Scheme Knowledge│            │
+                           │          │ JSON Prototype  │            │
        │          └─────────────────┘            │
        │                   │                    │
        ▼                   ▼                    ▼
@@ -39,10 +39,10 @@ Jan-SahayakAI uses the **Strands Agents** framework to create an AI assistant th
   - `civic.py`: Tools for creating complaints and identifying departments.
   - `complaint.py`: Tool for tracking complaints.
   - `followup.py`: Tool for advising on complaint follow-ups.
-  - `schemes.py`: Tools for searching schemes and checking preliminary eligibility.
+  - `schemes.py`: JSON-backed tools for searching schemes, checking preliminary eligibility, and reading details.
 - `data/`: Mock data storage layer.
   - `store.py`: A mock in-memory database to store civic complaints.
-  - `schemes_data.py`: A structured prototype dataset of government schemes.
+  - `schemes/schemes.json`: Official-source scheme records used by the Part 9 prototype.
 
 ## Civic Tool Definitions
 
@@ -60,18 +60,18 @@ Checks the status of an existing complaint and returns a recommended next action
 
 ## Government Scheme Tool Definitions
 
-*Note: All scheme tools currently operate on a PROTOTYPE dataset (`data/schemes_data.py`). They explicitly state that official verification is required.*
+*Note: Part 9 scheme tools operate on an intermediate JSON-backed knowledge source (`data/schemes/schemes.json`). Every result includes an official source and requires current eligibility verification.*
 
-### `search_government_schemes(...)`
-Searches the prototype scheme dataset based on user characteristics (state, age, income, occupation, etc.). Does not require all fields. Returns a list of potentially relevant schemes.
+### `search_schemes(category=None, location=None)`
+Loads `data/schemes/schemes.json`, then filters by category and location case-insensitively. Nationwide schemes are returned for a supplied state or location because they apply across India.
 
 ### `check_scheme_eligibility(scheme_id, user_data)`
 Performs a PRELIMINARY eligibility check by comparing provided user data against the scheme's requirements. It identifies missing information and returns a status like `POTENTIALLY_ELIGIBLE` or `MORE_INFORMATION_NEEDED`.
 
 ### `get_scheme_details(scheme_id)`
-Retrieves full details about a specific scheme, including benefits, documents required, and application method.
+Retrieves full details about a specific JSON-backed scheme, including its eligibility notes, benefits, documents, authority, and official source.
 
 ## Future Milestones
-- **RAG Integration:** Upgrade the `Scheme Knowledge Layer` from a static prototype dataset to official government documents processed via document ingestion, chunking, embeddings, and vector retrieval (RAG).
+- **Part 10 RAG Integration:** Upgrade or augment the JSON prototype with official government documents processed via document ingestion, chunking, embeddings, and vector retrieval (RAG). This has not been implemented.
 - Connecting the mock complaint database to a real persistent database (e.g., SQLite, PostgreSQL).
 - Frontend UI (e.g., Streamlit or React).

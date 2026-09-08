@@ -5,7 +5,7 @@ from strands import Agent
 from tools.civic import create_civic_complaint, identify_department
 from tools.complaint import track_complaint
 from tools.followup import follow_up_complaint
-from tools.schemes import search_government_schemes, check_scheme_eligibility, get_scheme_details
+from tools.schemes import search_schemes, check_scheme_eligibility, get_scheme_details
 
 SYSTEM_PROMPT = """
 You are Jan-SahayakAI, an AI-powered Good Neighbour Agent.
@@ -30,7 +30,8 @@ IMPORTANT RULES FOR CIVIC PROBLEMS:
 - Never claim a complaint was submitted when it wasn't.
 
 IMPORTANT RULES FOR GOVERNMENT SCHEMES:
-- Scheme data is currently PROTOTYPE/MOCK data.
+- Scheme data is currently an intermediate JSON-backed prototype.
+- Only describe schemes returned by the scheme tools; do not invent schemes.
 - NEVER claim that a user is officially eligible for a scheme. Say "preliminary eligibility" or "potentially eligible".
 - NEVER claim a scheme application was submitted.
 - ALWAYS warn the user that they must verify eligibility against official government sources.
@@ -55,7 +56,7 @@ def create_agent() -> Agent:
             identify_department,
             track_complaint,
             follow_up_complaint,
-            search_government_schemes,
+            search_schemes,
             check_scheme_eligibility,
             get_scheme_details
         ]
